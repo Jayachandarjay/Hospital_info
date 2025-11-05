@@ -44,7 +44,7 @@ public class VisitorController {
     }
     @GetMapping("home/patient/Securitycode")
     String securtycode(@RequestParam int code){
-        return patientService.code(code);git
+        return patientService.code(code);
     }
 
 
