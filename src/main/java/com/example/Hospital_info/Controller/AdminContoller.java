@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class AdminContoller {
     @Autowired
     AdminServices adminServices;
+    @GetMapping("/")
+    public String HomeAdmin() {
+        System.out.println("Hospital Info API is running successfully At Server..........!");
+        return "Hospital Info API is running successfully!";
+    }
     @PostMapping("Admin/addingdocters")
     public List<Docterlist> addingdocters(@RequestBody Docterlist docterlist){
         return adminServices.inserting(docterlist);
