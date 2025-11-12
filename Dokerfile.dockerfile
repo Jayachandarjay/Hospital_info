@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM eclipse-temurin:24-jdk-jammy AS build
+FROM eclipse-temurin:24-jdk AS build
 WORKDIR /app
 
 # Copy project files
@@ -12,7 +12,7 @@ RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Runtime
-FROM eclipse-temurin:24-jre-jammy
+FROM eclipse-temurin:24-jre
 WORKDIR /app
 
 # Copy built JAR from previous stage
